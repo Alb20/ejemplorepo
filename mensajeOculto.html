@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mensaje Oculto</title>
+    </head>
+    <body>
+        <center>
+            <h2>Mensaje Oculto</h2>
+        <p>Escriba el texto: <textarea id="deni" cols="160" rows="3"></textarea></p>
+        <button onclick=datos()>Descifrar</button></center>
+        <script>
+            function datos()
+            {
+                
+                var datos = document.getElementById('deni');
+                var cora;
+                var No = " ";
+                var constante = Array.from(datos.value).filter(function(val){return val!=No;});
+                console.log(constante);
+                document.write("Arreglo: " + constante + "<br><br>");
+                
+               
+                var y="";
+                for(let b = 16; b < constante.length; b=b+16)
+                {
+                    
+                    document.write(constante[b]);
+                    cora = constante[b]
+                    cora = cora
+                    y += constante[b]
+                    console.log(cora)
+                }
+
+               
+                datos = cora;
+
+                
+                y = y.slice(-y.length,-1)
+                console.log(y)
+            
+                
+                switch(cora){
+                    case "A": cora=1; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "B": cora=2; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "C": cora=3; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "D": cora=4; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "E": cora=5; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "F": cora=6; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "G": cora=7; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "H": cora=8; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "I": cora=9; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "J": cora=10; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "K": cora=11; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "L": cora=12; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "M": cora=13; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "N": cora=14; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "O": cora=15; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "P": cora=16; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "Q": cora=17; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "R": cora=18; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "S": cora=19; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "T": cora=20; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "U": cora=21; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "W": cora=22; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "X": cora=23; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "Y": cora=24; document.write("<br>Tamaño de la figura: " + cora); break;
+                    case "Z": cora=25; document.write("<br>Tamaño de la figura: " + cora); break;
+  
+                }
+
+                
+                if (y == 'TRIANGULO')
+                {
+                    function triangulo(canti)
+                    {
+                        document.write("<br><br>");
+                        for (let i = 0; i < canti; i++)
+                        {
+                            let piso = '';
+                            for (let t = 0; t < i + 1; t++)
+                            {
+                                piso = piso + '*';
+                            }
+                            document.write(piso + "<h3>");
+                        }
+                    }
+                    triangulo(cora);
+                }
+                
+                else if (y == 'CUADRADO')
+                {
+                    function cuadrado(canti)
+                    {
+                        document.write("<center>");
+                        for (let i = 1; i <= canti; i++)
+                        {
+                            let piso = '';
+                            for (let c = 1; c <= canti; c++)
+                            {
+                                piso = piso + '*';
+                            }
+                            document.write(piso + "<h3>");
+                        }
+                    }
+                    cuadrado(cora);
+                }
+                
+                else if (y == 'PIRAMIDE')
+                {
+                    function piramide(canti)
+                    {
+                        document.write("<br><br>");
+                        for (let i = 0; i < canti; i++)
+                        {
+                            let piso = '<center>';
+                                for (let p = 0; p < i + 1; p ++)
+                                {
+                                    piso = piso + '*';
+                                }
+                                document.write("<h3>" + piso );
+                        }
+                    }
+                    piramide(cora);
+                }
+            }
+        </script>
+    </body>
+</html>

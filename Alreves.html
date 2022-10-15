@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voltear Nombre</title>
+    </head>
+    <body> 
+        <center><h1>Voltear Nombre</h1></center>
+        <center><p>El nombre ya esta predefinido es "Alberto Soriano Lopez", volteara el nombre y aparecera empezando por apellido paterno.</p></center>
+        <center><button onclick=serie();>Voltear</button></center>
+        <script>
+            function serie()
+            {
+                var dato = "ALBERTO SORIANO LOPEZ"
+                var apellido1 = dato.substring(8,15); // separamos cada cadena apellido 1
+                var apellido2 = dato.substring(16,21);//apellido 2
+                var nom =  dato.substring(0,7);// nombre 
+
+                var apellidos = apellido2.split("");
+                var apes = apellidos.reverse();
+                var ap2 = apes.join("");
+
+                var apellido = apellido1.split("");
+                var ape = apellido.reverse();
+                var ap1 = ape.join("");
+
+                var nombre = nom.split("");
+                var nombr = nombre.reverse();
+                var nomb = nombr.join("");
+                //imprimimos en un documento nuevo lo que la funcion volteo
+                document.write("<br><br>" + "<center>" + "El nombre al reves es el siguiente: "+ " " + ap1 + " " + ap2 +  " " + nomb);   
+            }
+        </script>
+    </body>
+</html>

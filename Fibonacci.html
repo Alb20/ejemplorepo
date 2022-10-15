@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Serie Fibonacci</title>
+    </head>
+    <body>
+        <center><h1>Serie Fibonacci</h1>
+        <!--Definir la caja de texto en donde el usuario ingresara que cantidad dela serie de fibonacci se mostrara -->
+        <p>Cantidad de datos: <input type="number" id="ingresa" placeholder="Ingrese un numero"></p>
+        <!--Colocamos el boton el cual mandara a llamar la funcion en cargada de realizar el calculo de la serie de fobonacci  -->
+        <button onclick=serie(); >Calcular</button></center>
+        <!-- Empieza la creacion de JavaScript -->
+        <script>
+            //se crea una funcion que se llame "serie"
+            function serie()
+            {
+                // comenzamos con una variable que se llame "fibo" la cual mandara a llamar la cantidad que el usuario 
+                //  coloco en la caja de texto
+                    var fibo = document.getElementById('ingresa');
+                    // aui mostara en un mensaje la cantidad que elijio el usuario y se va a mostar el valor 
+                    document.write("Cantidad de datos a mostrar: " + fibo.value);
+                    //coloamos las tres variales que vamos a utilizar,que en este caso son tres 
+                        var n1 = 1;
+                        var n2 = 0;
+                        var nv = 0;
+                        // vamos a mostar la serie que se realizara y el resultado se mostarar 
+                        document.write("<br><br>Resultado: ");
+                        // un ciclo for el encargado de que se vaya incrementando y las veces que sean necesarias , 
+                        //todo depnediendo de la cantidad que el usuario ingreso
+                        //
+                            for(var i = 0; i < fibo.value; i ++)
+                            {
+                                //las tres variables y que operaciones vana a realizar 
+                                nv = n1 + n2;
+                                n1 = n2;
+                                n2 = nv;
+                                // al imprimirlos iran separados con una ","
+                                document.write(nv + ", ");
+                            }
+            }
+        </script>
+    </body>
+</html>

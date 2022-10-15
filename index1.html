@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+    <center>
+        <h1>Calculadora de IMC</h1>
+
+        <p>PESO: <input type="text"  name="" id="peso"placeholder = "Ingrese su peso en KG"> <br> </p>
+        <p>ALTURA : <input type="text" name="" id="estatura" placeholder="Ingrese su estatura en M"><br></p>
+
+        <button onclick=imc();>Calcular</button>
+       <p><h1>Tu IMC ES : </h1> <h1 id="hola"></h1></p></center>
+    
+    
+    <script>
+function imc(){
+    var p = document.getElementById("peso").value;
+    var e = document.getElementById("estatura").value;
+
+    var total = p/(e*e);
+
+    document.getElementById("peso").value="";
+    document.getElementById("estatura").value= "";
+
+    document.getElementById("hola").innerHTML=total;
+
+}
+
+    </script>
+</body>
+</html>

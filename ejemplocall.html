@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de Frutas</h1>    
+    <p id="demo"></p>
+    <p id="hola"></p>
+    <p id="cola"></p>
+
+    <script>
+
+            
+             const frutas = {
+                todaslasfrutas: function () {
+                    return this.frutaTropical + " y " + this.frutaDulce; 
+                }
+            }
+            const frutasHidalgo = {
+                frutaTropical:"Piña",
+                frutaDulce: "Platano"
+            }
+            const frutasMerida = {
+                frutaTropical:"Naranja",
+                frutaDulce:"Mango"
+            }
+            
+            //call los agarra por separado 
+            //apply agarra por arreglos
+            // de debuelva dependendo la persona
+            document.getElementById("hola").innerHTML=frutas.todaslasfrutas.call(frutasHidalgo);
+
+            const refrescos = {
+                refrescocola1:"Coca",
+                frutaDulce: "Red Cola",
+                todaslasfrutas: function () {
+                    return this.refrescocola1 + " y " + this.refrescocola2; 
+                }
+            }
+            
+            const refrescosCola= {
+                refrescocola1:"Sprite  ",
+                refrescocola2:"7UP"
+            }
+            
+            //call los agarra por separado 
+            //apply agarra por arreglos
+            // de debuelva dependendo la persona
+            document.getElementById("refresco").innerHTML=frutas.todaslasfrutas.bind(refrescosCola);
+
+            let alumno ={
+                datosCompletos: function(musica,problema){
+                    return this.nombre + " " + this.comida + " " + musica + " " + problema;
+                }
+            }
+
+            let alumno1={
+                nombre:"Alberto",
+                comida:"Pizza"
+            
+            }
+            document.getElementById("demo").innerHTML=alumno.datosCompletos.apply(alumno1,["deep house","No"]);
+    </script>
+
+</body>
+</html>
+

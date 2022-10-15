@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h2>Unidad 2</h2>
+<h3>CallBack & Promesas</h3>
+
+<p>Practica 1 </p>
+
+<h3>Resultado del Callback es: <p id="demo"> <br>
+<h3>El resultado d ela promesa es:<p id="hola"></center>
+
+<script>
+function imprime(valor) {
+  document.getElementById("demo").innerHTML = valor;
+}
+
+function myCalculator(num1, num2, num3, imprimer) {
+  let AF = (num1 * num2) * num3;
+  imprimer(AF);
+}
+
+myCalculator(3, 5, 8, imprime);
+
+
+let promesa = new Promise(function(Resolve, Reject) {
+  let x = 9;
+  let q = 8;
+  let w = 9;
+  let z =10;
+  let y = 5;
+  let a = 7;
+  let s = 6;
+  let g = 8;
+  let d = -10;
+  let l = -8;
+  
+  let promedio = (x+q+w+z+y+a+s+g+d+l)/10;
+// some code (try to change x to 5)
+  if (x > 0 && q > 0 && w > 0 && z > 0 && y > 0 && a > 0 && s > 0 && g > 0 && d > 0 && l>0 ) {
+    Resolve(promedio);
+  } else {
+    Reject("Las calificaciones tiene que ser positivas");
+  }
+});
+promesa.then(
+  function(value) {document.getElementById("hola").innerHTML = value;},
+  function(error) {document.getElementById("hola").innerHTML = error;}
+);
+</script>
+
+</body>
+</html>

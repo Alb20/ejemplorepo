@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arreglo de objetos</title>
+    </head>
+<body>
+
+<center><h2>JavaScript Arreglo de objetos</h2>
+
+<p>NOMBRE: <input type=text id=nombre><br></p>
+<p>EDAD: <input type=number id=edad min="1" max="100" maxlength="2"><br></p>
+<p>LOCALIDAD: <input type=text id=localidad><br></p>
+<p>NUMERO : <input type=tel id=telefono maxlength = "10"><br></p>
+<p>SEXO:<select id=sexo required > 
+    <!--Definir las opciones que va a llevar la lista-->
+    <option>Hombre</option>
+    <option>Mujer</option>
+    <option>Indefinido </option>
+    </select></p>
+<button onClick=guardar();>Guardar</button>
+<button onClick=imprimir();>Imprimir</button>
+<p id="hola"></p></center>
+<script>
+class Alumnos{
+    constructor(nombre,edad,localidad,sexo,telefono){
+    this.nombre=nombre;
+    this.edad=edad;
+    this.localidad=localidad;
+    this.telefono=telefono;
+    this.sexo=sexo;
+    }   
+       datos(){
+        return `El alumno(a) ${this.nombre} de edad ${this.edad} de localidad ${this.localidad} es ${this.sexo} y su numero de telefono es ${this.telefono}`;
+        }
+    }
+            var objeto=null;
+            var arreglo=new Array(1000);
+            var contador=0;
+
+        set:function guardar(){
+        const nombre = document.getElementById("nombre").value;
+        const edad = document.getElementById("edad").value;
+        const localidad = document.getElementById("localidad").value;
+        const sexo = document.getElementById("sexo").value;
+        const telefono = document.getElementById("telefono").value;
+        
+        arreglo[contador]=new Alumnos(nombre,edad,localidad,sexo,telefono);
+        contador++;
+        
+        document.getElementById("nombre").value="";
+        document.getElementById("edad").value="";
+        document.getElementById("localidad").value="";
+        document.getElementById("sexo").value="";
+        document.getElementById("telefono").value="";
+        }
+
+            get:function imprimir(){
+            let salida="";
+            for(let i=0;i<contador;i++){
+            salida+=arreglo[i].datos()+"<br>";
+            }
+            document.getElementById("hola").innerHTML=salida;
+            }
+</script>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/js/tryit.asp?filename=tryjs_array by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 07 Mar 2022 18:19:33 GMT -->
+</html>
